@@ -1,13 +1,13 @@
 
 /* info on the background image css: https://blog.logrocket.com/css-full-page-background/ */
 body {
-  background-image: url("image/anders-jilden-AkUR27wtaxs-unsplash.jpg");
+  background-image: url("/image/anders-jilden-AkUR27wtaxs-unsplash.jpg");
       background-repeat: no-repeat;
     background-position: center center;
   background-size: cover;
   background-color: #E59397;
   overflow: hidden;
-  position: relative;
+  position: absolute; 
   font-family: fantasy;
   text-align: center;
 
