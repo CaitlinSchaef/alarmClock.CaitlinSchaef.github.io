@@ -4,8 +4,10 @@ body {
   background-image: url("/image/anders-jilden-AkUR27wtaxs-unsplash.jpg");
       background-repeat: no-repeat;
     background-position: center center;
-  background-size: cover;
   background-color: #E59397;
+  background-size: cover;
+  /* attachment is what let you wrap it to the screen properly */
+  background-attachment: fixed;
   overflow: hidden;
   position: absolute; 
   font-family: fantasy;
