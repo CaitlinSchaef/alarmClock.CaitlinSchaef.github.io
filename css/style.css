@@ -1,3 +1,9 @@
+/* an asterisk as a title in css applies all html page */
+
+* {
+  margin: 0;
+  padding: 0;
+}
 
 /* info on the background image css: https://blog.logrocket.com/css-full-page-background/ */
 body {
@@ -14,9 +20,19 @@ body {
   text-align: center;
 
 }
+.container {
+  width: 800px;
+  height: 2000px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  /* this all centers the container */
+  background: rgb(229, 147, 151);
+}
 
 /* Identify specific div classes with a period followed by name, not sure if it needs to be case sensitive */ 
-.Clock {
+.clock {
   position: absolute;
   #time {
 
