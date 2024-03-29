@@ -6,10 +6,17 @@ body {
     background-position: center center;
   background-size: cover;
   background-color: #E59397;
-  
+  overflow: hidden;
+  position: relative;
+  font-family: fantasy;
+  text-align: center;
+
 }
 
 /* Identify specific div classes with a period followed by name, not sure if it needs to be case sensitive */ 
 .Clock {
-  yodellll; 
+  position: absolute;
+  #time {
+
+  }
 }
