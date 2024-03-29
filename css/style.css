@@ -8,3 +8,8 @@ body {
   background-color: #E59397;
   
 }
+
+/* Identify specific div classes with a period followed by name, not sure if it needs to be case sensitive */ 
+.Clock {
+  yodellll; 
+}
