@@ -22,8 +22,11 @@ body {
 }
 .container {
   width: 800px;
-  height: 2000px;
+  height: 200px;
   position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
@@ -34,7 +37,7 @@ body {
 /* Identify specific div classes with a period followed by name, not sure if it needs to be case sensitive */ 
 .clock {
   position: absolute;
-  #time {
+  width: 400px;
+  height: 120px;
 
   }
-}
