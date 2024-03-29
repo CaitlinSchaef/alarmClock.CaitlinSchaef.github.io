@@ -15,7 +15,7 @@ body {
   /* attachment is what let you wrap it to the screen properly */
   background-attachment: fixed;
   overflow: hidden;
-  position: absolute; 
+  
   font-family: fantasy;
   text-align: center;
 
@@ -26,16 +26,20 @@ body {
   position: absolute;
   top: 50%;
   left: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transform: translate(-50%, -50%);
-  /* this all centers the container; do you need to put this back?
-   align-items: center;
-  justify-content: center;*/
+  /* this all centers the container; adding display: flex made it actually centeredy*/
 }
 
 /* Identify specific div classes with a period followed by name, not sure if it needs to be case sensitive */ 
 .clock {
-  position: absolute;
   width: 400px;
   height: 120px;
   background: rgb(252, 175, 157);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   }
