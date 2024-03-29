@@ -24,14 +24,12 @@ body {
   width: 800px;
   height: 200px;
   position: absolute;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  /* this all centers the container */
-  background: rgb(229, 147, 151);
+  /* this all centers the container; do you need to put this back?
+   align-items: center;
+  justify-content: center;*/
 }
 
 /* Identify specific div classes with a period followed by name, not sure if it needs to be case sensitive */ 
@@ -39,5 +37,5 @@ body {
   position: absolute;
   width: 400px;
   height: 120px;
-
+  background: rgb(252, 175, 157);
   }
