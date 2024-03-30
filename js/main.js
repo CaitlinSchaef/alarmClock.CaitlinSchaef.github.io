@@ -3,6 +3,9 @@
 // should this be myButton or button? Never know what to do with id
 
 document.addEventListener('DOMContentLoaded', function() {
+    // Flag to track if the alarm has been triggered
+    var alarmTriggered = false;
+
     // Function to update the clock display
     function updateClock() {
         var currentTime = new Date();
@@ -40,12 +43,29 @@ document.addEventListener('DOMContentLoaded', function() {
             var nowHours = now.getHours();
             var nowMinutes = now.getMinutes();
 
-            // Check if the current time matches the alarm time
-            if (nowHours === alarmHours && nowMinutes === alarmMinutes) {
+            // Check if the current time matches the alarm time and the alarm hasn't been triggered yet
+            if (nowHours === alarmHours && nowMinutes === alarmMinutes && !alarmTriggered) {
                 // If the time matches, play the alarm sound
                 document.getElementById('alarmAudio').play();
+                // Show a text alert
+                showTextAlert("Wake up!");
+                // Set the flag to true to prevent repeated triggering with a boolean but then it doesn't work
+                // alarmTriggered = true;
             }
         }
+    }
+
+    // Function to show text alert
+    function showTextAlert(message) {
+        // Show the alert message
+        var alertElement = document.getElementById('textAlert');
+        alertElement.textContent = message;
+        alertElement.style.display = 'block';
+
+        // Hide the alert message after 5 seconds, using milliseconds again
+        setTimeout(function() {
+            alertElement.style.display = 'none';
+        }, 5000); 
     }
 
     // Set alarm button event listener
