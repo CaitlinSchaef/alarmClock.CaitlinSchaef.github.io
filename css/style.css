@@ -16,10 +16,11 @@ body {
   background-attachment: fixed;
   overflow: hidden;
   
-  font-family: fantasy;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
   text-align: center;
-
+  color: white; 
 }
+/* first set a container and then something inside for the clock */
 .container {
   width: 800px;
   height: 200px;
@@ -55,9 +56,9 @@ body {
     text-align: center;
     position: relative;
   }
-
+/* the next few lines insert labels for the span items */
   .clock span::after {
-    font-size: 10px;
+    font-size: 18px;
     position: absolute;
     bottom: -5px;
     left: 50%;
