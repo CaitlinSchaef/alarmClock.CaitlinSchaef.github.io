@@ -13,7 +13,7 @@
 </head>
 
 <body>
-
+<!-- set the clock container settings -->
 <div class="body">
     <div class="container">
         <div class="clock">
@@ -22,18 +22,21 @@
             <span id="min">00</span>
             <span>:</span>
             <span id="sec">00</span>
-            <div class="alarm">
-                <label for="alarmTime">
-                    Select Time:
-                </label>
-                <input type="time" id="alarmTime"
-                    class="alarm-input">
-                <button type="button" id="myButton" class="myButton">
+<!-- now set the alarm settings -->   
+            <div class="input-row">
+                <div class="input-field">
+                    <label for="alarmTime">
+                        Select Time:
+                    </label>
+                    <input type="time" id="alarmTime"
+                        class="alarm-input">
+                </div>
+                <button type="button" class= "myButton" id="myButton">
                     Set Your Alarm!
                 </button>
                 <audio id="alarmAudio" loop autoplay src="https://open.spotify.com/embed/track/608wYP5XWenLz8cOSYjX7X?utm_source=generator"></audio>
-                </div>
             </div>
+            <div class="alarms" id="alarms">
         </div>
     </div>
 
