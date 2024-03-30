@@ -73,3 +73,18 @@ body {
   #sec::after {
     content: 'SECONDS';
   }
+
+  /* now style the alarm button! */
+  .myButton {
+    background-color: #494458;
+    border: 2px solid #E59397;
+    color: whitesmoke;
+    text-align: center;
+    border-width: 2px;
+    border-radius: 4px;
+    padding: 5px;
+  }
+
+  .myButton:active {
+    background-color: #D46C75;
+  }

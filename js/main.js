@@ -21,10 +21,9 @@ let min = document.getElementById("min")
 
 let sec = document.getElementById("sec")
 
-// need to use a set interval to return the current time
+// need to use a set interval to return the current time in real time.
 setInterval(() => {
     let currentTime = new Date();
-
     hrs.innerHTML = currentTime.getHours();
     min.innerHTML = currentTime.getMinutes();
     sec.innerHTML = currentTime.getSeconds();
