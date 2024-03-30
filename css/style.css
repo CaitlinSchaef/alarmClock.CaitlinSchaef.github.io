@@ -74,7 +74,7 @@ body {
     content: 'SECONDS';
   }
 
-  /* now style the alarm button! */
+  /* now style the alarm and button! */
   .myButton {
     background-color: #494458;
     border: 2px solid #E59397;
@@ -88,3 +88,4 @@ body {
   .myButton:active {
     background-color: #D46C75;
   }
+

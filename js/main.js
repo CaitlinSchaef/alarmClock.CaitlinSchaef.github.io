@@ -3,20 +3,8 @@
 // should this be myButton or button? Never know what to do with id
 setAlarmBtn = document.querySelector("button"); 
 
-//clock functions
 
-class Clock {
-
-}
-
-new Clock()
-
-// date functions, do you need month and day and year or just first day?
-
-// alarm function
-
-
-// let's try this to build time
+// This section will build and set the clock to pull real time:
 
 let hrs = document.getElementById("hrs")
 
@@ -34,3 +22,7 @@ setInterval(() => {
 // the 1000 is a millisecond which equals 1 second, and so it runs the code every second
 
 // lets try to make the alarm here; PICK UP HERE
+
+document.getElementById("myButton").addEventListener("click", function (){
+setTimeout(function() { alert("Wake up!"); }, time);
+});
