@@ -35,11 +35,23 @@ body {
 
 /* Identify specific div classes with a period followed by name, not sure if it needs to be case sensitive */ 
 .clock {
-  width: 400px;
+  width: 600px;
   height: 120px;
-  background: rgb(252, 175, 157);
+  /* the last digits on the rgba is an alpha which converts opacity; you
+  can adjust manually in the ide or use a website like:
+  http://hex2rgba.devoth.com/ */
+  background: rgba(252, 175, 157, 0.1);
   border-radius: 10px;
   display: flex;
   align-items: center;
   justify-content: center;
+  backdrop-filter: blur(40px);
+  }
+/* this will affect the numbers which are in span in the clock div */
+  .clock span {
+    font-size: 80px;
+    width: 110px;
+    display: inline-block;
+    text-align: center;
+    position: relative;
   }
