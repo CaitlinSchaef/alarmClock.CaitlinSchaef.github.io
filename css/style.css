@@ -55,3 +55,20 @@ body {
     text-align: center;
     position: relative;
   }
+
+  .clock span::after {
+    font-size: 10px;
+    position: absolute;
+    bottom: -5px;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  #hrs::after {
+    content: 'HOURS';
+  }
+  #min::after {
+    content: 'MINUTES';
+  }
+  #sec::after {
+    content: 'SECONDS';
+  }
