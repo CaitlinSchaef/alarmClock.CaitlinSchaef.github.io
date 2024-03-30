@@ -13,3 +13,20 @@ new Clock()
 // alarm function
 
 
+// let's try this
+
+let hrs = document.getElementById("hrs")
+
+let min = document.getElementById("min")
+
+let sec = document.getElementById("sec")
+
+// need to use a set interval to return the current time
+setInterval(() => {
+    let currentTime = new Date();
+
+    hrs.innerHTML = currentTime.getHours();
+    min.innerHTML = currentTime.getMinutes();
+    sec.innerHTML = currentTime.getSeconds();
+},1000)
+// the 1000 is a millisecond which equals 1 second, and so it runs the code every second
