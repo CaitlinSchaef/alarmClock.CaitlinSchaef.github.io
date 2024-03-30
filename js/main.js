@@ -51,6 +51,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 showTextAlert("Wake up!");
                 // Set the flag to true to prevent repeated triggering with a boolean but then it doesn't work
                 // alarmTriggered = true;
+                // try: audio.loop set to false
             }
         }
     }
