@@ -16,7 +16,7 @@ new Clock()
 // alarm function
 
 
-// let's try this
+// let's try this to build time
 
 let hrs = document.getElementById("hrs")
 
@@ -32,3 +32,5 @@ setInterval(() => {
     sec.innerHTML = currentTime.getSeconds();
 },1000)
 // the 1000 is a millisecond which equals 1 second, and so it runs the code every second
+
+// lets try to make the alarm here; PICK UP HERE
