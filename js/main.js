@@ -1,4 +1,7 @@
 // Tip: We will be using the Date object and setInterval and/or setTimeout
+// top stuff
+// should this be myButton or button? Never know what to do with id
+setAlarmBtn = document.querySelector("button"); 
 
 //clock functions
 
