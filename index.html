@@ -34,8 +34,11 @@
                 <button type="button" class= "myButton" id="myButton">
                     Set Your Alarm!
                 </button>
-                <audio id="alarmAudio" loop autoplay src="https://open.spotify.com/embed/track/608wYP5XWenLz8cOSYjX7X?utm_source=generator"></audio>
-            </div>
+                <audio id="alarmAudio" loop autoplay>
+                    <source src="https://open.spotify.com/embed/track/608wYP5XWenLz8cOSYjX7X?utm_source=generator" type="audio/mpeg">
+                    <!-- Add additional source elements for different audio formats if needed -->
+                </audio>
+                </div>
             <div class="alarms" id="alarms">
         </div>
     </div>

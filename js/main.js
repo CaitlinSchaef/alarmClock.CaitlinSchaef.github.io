@@ -1,107 +1,61 @@
 // Tip: We will be using the Date object and setInterval and/or setTimeout
 // top stuff
 // should this be myButton or button? Never know what to do with id
-setAlarmBtn = document.querySelector("button"); 
 
+document.addEventListener('DOMContentLoaded', function() {
+    // Function to update the clock display
+    function updateClock() {
+        var currentTime = new Date();
+        var hours = currentTime.getHours();
+        var minutes = currentTime.getMinutes();
+        var seconds = currentTime.getSeconds();
 
-// This section will build and set the clock to pull real time:
+        // Display leading zeros if necessary
+        hours = hours < 10 ? '0' + hours : hours;
+        minutes = minutes < 10 ? '0' + minutes : minutes;
+        seconds = seconds < 10 ? '0' + seconds : seconds;
 
-let hrs = document.getElementById("hrs")
+        // Update the clock display
+        document.getElementById('hrs').textContent = hours;
+        document.getElementById('min').textContent = minutes;
+        document.getElementById('sec').textContent = seconds;
 
-let min = document.getElementById("min")
-
-let sec = document.getElementById("sec")
-
-// need to use a set interval to return the current time in real time.
-// set interval calls it over and over:
-setInterval(() => {
-    let currentTime = new Date();
-    hrs.innerHTML = currentTime.getHours();
-    min.innerHTML = currentTime.getMinutes();
-    sec.innerHTML = currentTime.getSeconds();
-},1000)
-// the 1000 is a millisecond which equals 1 second, and so it runs the code every second
-
-// lets try to make the alarm here; PICK UP HERE
-// should I set this as a class actually be alarm?
-
-function alarmSetFunction() {
-    let now = new Date();
-    let selectedDate = new Date(dateInput.value + "T" + tInput.value);
-    if (selectedDate <= now) {
-        alert(`Invalid time. Please select 
-      a future date and time.`);
-        return;
+        // Check if the current time matches the alarm time
+        checkAlarm(hours, minutes);
     }
-    if (almTimesArray.includes(selectedDate.toString())) {
-        alert(`You cannot set multiple 
-      alarms for the same time.`);
-        return;
-    }
-    if (cnt < maxValue) {
-        let timeUntilAlarm = selectedDate - now;
-        let alarmDiv = document.createElement("div");
-        alarmDiv.classList.add("alarm");
-        alarmDiv.innerHTML = `
-            <span>
-              ${selectedDate.toLocaleString()}
-            </span>
-            <button class="delete-alarm">
-              Delete
-            </button>
-        `;
-        alarmDiv
-            .querySelector(".delete-alarm")
-            .addEventListener("click", () => {
-                alarmDiv.remove();
-                cnt--;
-                clearTimeout(interVal);
-                const idx = almTimesArray.indexOf(selectedDate.toString());
-                if (idx !== -1) {
-                    almTimesArray.splice(idx, 1);
-                }
-            });
-        interVal = setTimeout(() => {
-            alert("Time to wake up!");
-            alarmDiv.remove();
-            cnt--;
-            const alarmIndex = almTimesArray.indexOf(selectedDate.toString());
-            if (alarmIndex !== -1) {
-                almTimesArray.splice(alarmIndex, 1);
+
+    // Call the updateClock function every second
+    setInterval(updateClock, 1000);
+
+    // Function to check the alarm
+    function checkAlarm(currentHours, currentMinutes) {
+        var alarmTime = document.getElementById('alarmTime').value;
+        var alarmHours = parseInt(alarmTime.split(':')[0]);
+        var alarmMinutes = parseInt(alarmTime.split(':')[1]);
+
+        // Check if alarm is set
+        if (alarmTime !== '') {
+            // Get the current time in hours and minutes
+            var now = new Date();
+            var nowHours = now.getHours();
+            var nowMinutes = now.getMinutes();
+
+            // Check if the current time matches the alarm time
+            if (nowHours === alarmHours && nowMinutes === alarmMinutes) {
+                // If the time matches, play the alarm sound
+                document.getElementById('alarmAudio').play();
             }
-        }, timeUntilAlarm);
-        contan.appendChild(alarmDiv);
-        cnt++;
-        almTimesArray.push(selectedDate.toString());
-    } else {
-        alert("You can only set a maximum of 3 alarms.");
+        }
     }
-}
-function showAlarmFunction() {
-    let alarms = contan.querySelectorAll(".alarm");
-    alarms.forEach((alarm) => {
-        let deleteButton = alarm.querySelector(".delete-alarm");
-        deleteButton.addEventListener("click", () => {
-            alarmDiv.remove();
-            cnt--;
-            clearTimeout(interVal);
-            const alarmIndex = almTimesArray.indexOf(selectedDate.toString());
-            if (alarmIndex !== -1) {
-                almTimesArray.splice(alarmIndex, 1);
-            }
-        });
+
+    // Set alarm button event listener
+    var setAlarmBtn = document.querySelector(".myButton");
+    setAlarmBtn.addEventListener('click', function() {
+        var alarmTime = document.getElementById('alarmTime').value;
+
+        // Check for valid input
+        if (alarmTime === '') {
+            alert("Please set a valid alarm time.");
+        }
     });
-}
-showAlarmFunction();
-setInterval(timeChangeFunction, 1000);
-btn.addEventListener("click", alarmSetFunction);
-timeChangeFunction();
-
-// OG build new above
-document.getElementById("myButton").addEventListener("click", function (){
-setTimeout(function() { alert("Wake up!"); }, time);
 });
-function newFunction() {
-    return this;
-}
-
